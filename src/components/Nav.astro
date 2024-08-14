@@ -9,19 +9,17 @@ interface Props {
 const { links } = Astro.props;
 ---
 
-<nav class="flex items-center justify-between flex-wrap p-6">
-  <div class="hidden sm:block sm:ml-6">
-    <div class="flex space-x-4">
-      {
-        links.map((link) => (
-          <a
-            href={link.href}
-            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-          >
-            {link.title}
-          </a>
-        ))
-      }
-    </div>
+<nav class="flex items-center justify-center flex-wrap p-6">
+  <div class="flex space-x-4">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class="text-gray-50 hover:bg-lavender-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+        >
+          {link.title}
+        </a>
+      ))
+    }
   </div>
 </nav>
