@@ -1,0 +1,19 @@
+---
+interface Props {
+  background?:
+    | "light-gray"
+    | "dark-gray"
+    | "light-azure"
+    | "dark-azure"
+    | "light-lavender"
+    | "dark-lavender";
+}
+
+const { background } = Astro.props;
+---
+
+<div
+  class={`bg-${background || "zinc"}-500 text-white p-4 rounded-lg shadow-2xl `}
+>
+  <slot />
+</div>

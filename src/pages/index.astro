@@ -1,19 +1,128 @@
 ---
+import Box from "../components/Box.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <main></main>
-</Layout>
+  <main>
+    <div class="bento grid grid-cols-12 gap-4">
+      <!-- Left grid -->
+      <div class="col-span-5 grid auto-rows-min grid-cols-5 gap-8">
+        <!-- Intro -->
+        <div class="col-span-5 h-[205px] rounded-lg bg-neutral-900 p-8">
+          <h2 class="text-2xl font-semibold text-white">Hi, I'm Dwayne</h2>
+        </div>
 
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-</style>
+        <!-- Resume and portfolio code -->
+        <div class="col-span-5 flex flex-col gap-8">
+          <div class="col-span-5 flex h-[70px] gap-8">
+            <a
+              href="#"
+              class="size-full rounded-lg bg-lavender-200 px-3 py-2 text-sm font-medium text-black hover:bg-lavender-300"
+            >
+              Link 1
+            </a>
+            <a
+              href="#"
+              class="size-full rounded-lg bg-azure-300 px-3 py-2 text-sm font-medium text-black hover:bg-azure-400"
+            >
+              Link 2
+            </a>
+          </div>
+
+          <!-- About -->
+          <div
+            class="col-span-5 flex flex-col gap-6 rounded-lg bg-neutral-900 p-8"
+          >
+            <h3 class="text-xl font-semibold text-white">About me</h3>
+            <p class="text-normal font-normal leading-normal text-white">
+              My 10+ years at companies like Google and Servicenow have honed my
+              ability to create elegant solutions to the most intricate
+              problems. Explore my work below.
+            </p>
+          </div>
+        </div>
+
+        <!-- Overtake Figma designs -->
+        <div
+          class="col-span-5 flex h-[220px] gap-6 rounded-lg bg-neutral-900 p-8"
+        >
+          <h3 class="text-xl font-semibold text-white">
+            Overtake Figma designs
+          </h3>
+          <div class="flex flex-col gap-2"></div>
+        </div>
+      </div>
+
+      <!-- Right grid -->
+      <div class="col-span-7 grid auto-rows-min grid-cols-5 gap-8">
+        <!-- Avatar -->
+        <div
+          class="col-span-3 h-[205px] rounded-lg bg-neutral-900 bg-cover bg-center"
+          style="background-image: url('https://khtaejonhhmqumbcfahq.supabase.co/storage/v1/object/public/avatars/XT308664.jpg?t=2024-08-14T19%3A46%3A41.777Z')"
+        >
+        </div>
+
+        <!-- Contact -->
+        <div class="col-span-4 flex flex-col gap-6">
+          <a
+            class="h-[86px] rounded-lg bg-lavender-200 px-3 py-2 text-sm font-medium text-black hover:bg-lavender-300"
+            href="#">About</a
+          >
+          <a
+            class="h-[86px] rounded-lg bg-azure-300 px-3 py-2 text-sm font-medium text-black hover:bg-azure-400"
+            href="#">Projects</a
+          >
+        </div>
+
+        <!-- Current stack -->
+        <div
+          class="col-span-4 flex h-[256px] flex-col gap-6 rounded-lg bg-lavender-800 p-8"
+        >
+          <h3 class="text-xl font-semibold text-white">Current Stack</h3>
+          <p class="text-normal font-normal leading-5 text-white">
+            At the moment, i’m loving the DX of React, Convex, NextJS 13,
+            Tailwind, and ShadCN.
+          </p>
+          <div>
+            <span class="text-sm font-light leading-normal text-white">
+              **Currently learning Rust
+            </span>
+          </div>
+        </div>
+
+        <!-- Dark Mode -->
+        <div
+          class="col-span-3 flex h-[256px] gap-6 rounded-lg bg-neutral-900 p-8"
+        >
+          <h3 class="text-xl font-semibold text-white">Mode</h3>
+          <div class="flex flex-col gap-2"></div>
+        </div>
+
+        <!-- Overtake Social -->
+        <div
+          class="col-span-7 flex h-[280px] gap-6 rounded-lg bg-neutral-900 p-8"
+        >
+          <h3 class="text-xl font-semibold text-white">Overtake Social</h3>
+          <div class="flex flex-col gap-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      main {
+        margin: auto;
+        padding: 1rem;
+        width: 1120px;
+        max-width: calc(100% - 2rem);
+        color: white;
+      }
+
+      .bento {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 32px;
+      }
+    </style>
+  </main>
+</Layout>
