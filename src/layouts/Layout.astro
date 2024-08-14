@@ -1,5 +1,6 @@
 ---
 import Nav from "../components/Nav.astro";
+import "@fontsource/geist-sans";
 
 interface Props {
   title: string;
@@ -36,7 +37,7 @@ const { title } = Astro.props;
       );
     }
     html {
-      font-family: system-ui, sans-serif;
+      font-family: "Geist Sans", sans-serif;
       background: #070707;
     }
   </style>
