@@ -4,6 +4,7 @@ import Intro from "../components/Intro.astro";
 import Layout from "../layouts/Layout.astro";
 import "@/styles/global.css";
 import Contact from "@/components/Contact.astro";
+import Work from "@/components/Work.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -17,24 +18,10 @@ import Contact from "@/components/Contact.astro";
 
         <!-- Resume and portfolio code -->
         <div class="col-span-10 flex flex-col gap-8">
-          <div class="flex h-[70px] gap-8">
-            <a
-              href="#"
-              class="size-full rounded-lg bg-lavender-200 px-3 py-2 text-sm font-medium text-black hover:bg-lavender-300"
-            >
-              Link 1
-            </a>
-            <a
-              href="#"
-              class="size-full rounded-lg bg-azure-300 px-3 py-2 text-sm font-medium text-black hover:bg-azure-400"
-            >
-              Link 2
-            </a>
-          </div>
-
+          <Work />
           <!-- About -->
           <div
-            class="col-span-10 flex flex-col gap-6 rounded-lg bg-neutral-900 p-8"
+            class="col-span-10 flex flex-col gap-6 rounded-2xl bg-neutral-900 p-8"
           >
             <h3 class="text-xl font-semibold text-white">About Me</h3>
             <p class="text-normal font-normal leading-normal text-white">
@@ -47,7 +34,7 @@ import Contact from "@/components/Contact.astro";
 
         <!-- Overtake Figma designs -->
         <div
-          class="col-span-10 flex h-[220px] gap-6 rounded-lg bg-neutral-700 p-8"
+          class="col-span-10 flex h-[220px] gap-6 rounded-2xl bg-neutral-700 p-8"
         >
           <h3 class="text-xl font-semibold text-white">
             Overtake Figma Designs
@@ -60,7 +47,7 @@ import Contact from "@/components/Contact.astro";
       <div class="col-span-7 grid auto-rows-min grid-cols-10 gap-8">
         <!-- Avatar -->
         <div
-          class="col-span-5 h-[190px] rounded-lg bg-neutral-900 bg-cover bg-center shadow-md dark:shadow-none"
+          class="col-span-5 h-[190px] rounded-2xl bg-neutral-900 bg-cover bg-center shadow-md dark:shadow-none"
           style="background-image: url('https://khtaejonhhmqumbcfahq.supabase.co/storage/v1/object/public/avatars/XT308664.jpg?t=2024-08-14T19%3A46%3A41.777Z')"
         >
         </div>
@@ -72,7 +59,7 @@ import Contact from "@/components/Contact.astro";
 
         <!-- Current stack -->
         <div
-          class="col-span-6 flex h-[224px] flex-col gap-6 rounded-lg bg-lavender-800 p-8"
+          class="col-span-6 flex h-[224px] flex-col gap-6 rounded-2xl bg-lavender-800 p-8"
         >
           <h3 class="text-xl font-semibold text-white">Current Stack</h3>
           <p class="text-normal font-normal leading-5 text-white">
@@ -93,7 +80,7 @@ import Contact from "@/components/Contact.astro";
 
         <!-- Overtake Social -->
         <div
-          class="col-span-10 flex h-[280px] gap-6 rounded-lg bg-neutral-900 p-8"
+          class="col-span-10 flex h-[280px] gap-6 rounded-2xl bg-neutral-900 p-8"
         >
           <h3 class="text-xl font-semibold text-white">Overtake Social</h3>
           <div class="flex flex-col gap-2"></div>
