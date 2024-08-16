@@ -1,4 +1,3 @@
-import { Button } from "@/ui/ui/button";
 import { Switch } from "@/ui/ui/switch";
 import { SunDimIcon, MoonIcon } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -21,17 +20,22 @@ export function DarkModeToggle() {
   }, [theme]);
 
   return (
-    <Button
-      onClick={() => {
-        setThemeState(isDark ? "light" : "dark");
-      }}
-      variant="ghost"
-    >
-      {isDark ? (
-        <SunDimIcon className="size-6 text-neutral-700 dark:text-neutral-100" />
-      ) : (
-        <MoonIcon className="size-6 text-neutral-800 dark:text-neutral-100" />
-      )}
-    </Button>
+    <div className="flex size-full flex-col items-center justify-between gap-6 rounded-2xl bg-neutral-50 p-8 shadow-md dark:bg-neutral-700 dark:shadow-none">
+      <h3 className="text-xl font-semibold text-black dark:text-white">
+        Dark mode
+      </h3>
+      <div className="flex flex-col gap-2">
+        {isDark ? (
+          <MoonIcon className="size-10 text-neutral-800 dark:text-neutral-100" />
+        ) : (
+          <SunDimIcon className="size-12 text-neutral-700 dark:text-neutral-100" />
+        )}
+      </div>
+      <Switch
+        className="dark-mode-toggle__switch"
+        checked={isDark}
+        onCheckedChange={(isDark) => setThemeState(isDark ? "dark" : "light")}
+      />
+    </div>
   );
 }

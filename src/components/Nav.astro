@@ -1,4 +1,6 @@
 ---
+import { DarkModeToggle } from "./DarkModeToggle";
+
 interface Props {
   links: Array<{
     href: string;
@@ -9,7 +11,9 @@ interface Props {
 const { links } = Astro.props;
 ---
 
-<nav class="flex flex-wrap items-center justify-center p-4">
+<nav
+  class="flex flex-wrap items-center justify-between gap-4 p-4 md:gap-8 lg:gap-12 xl:gap-16"
+>
   <div class="flex space-x-4">
     {
       links.map((link) => (
@@ -22,4 +26,6 @@ const { links } = Astro.props;
       ))
     }
   </div>
+
+  <DarkModeToggle client:load />
 </nav>

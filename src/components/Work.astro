@@ -3,30 +3,28 @@ import Box from "./Box.astro";
 import LinkBox from "./LinkBox.astro";
 ---
 
-<div class="flex gap-8">
-  <div class="relative h-[60px] w-full">
-    <LinkBox
-      href="https://drive.google.com/file/d/1Qb6i8H76c8ysfoDhEshY5d_4n2XgJs5W/view?usp=drive_link"
-      background="light-lavender"
+<div class="relative h-[60px] w-full">
+  <LinkBox
+    href="https://drive.google.com/file/d/1Qb6i8H76c8ysfoDhEshY5d_4n2XgJs5W/view?usp=drive_link"
+    background="light-lavender"
+  >
+    <div
+      class="flex size-full cursor-pointer items-center justify-center gap-4 text-neutral-900"
     >
-      <div
-        class="flex size-full cursor-pointer items-center justify-center gap-4 text-neutral-900"
-      >
-        <span class="font-normal font-semibold">PDF Resume</span>
-      </div>
-    </LinkBox>
-  </div>
+      <span class="font-normal font-semibold">PDF Resume</span>
+    </div>
+  </LinkBox>
+</div>
 
-  <div class="relative h-[60px] w-full">
-    <LinkBox
-      href="https://github.com/dwaynelavon/digitalportfolio"
-      background="light-azure"
+<div class="relative h-[60px] w-full">
+  <LinkBox
+    href="https://github.com/dwaynelavon/digitalportfolio"
+    background="light-azure"
+  >
+    <div
+      class="flex size-full cursor-pointer items-center justify-center gap-4 text-neutral-900"
     >
-      <div
-        class="flex size-full cursor-pointer items-center justify-center gap-4 text-neutral-900"
-      >
-        <span class="font-normal font-semibold">Projects</span>
-      </div>
-    </LinkBox>
-  </div>
+      <span class="font-normal font-semibold">Projects</span>
+    </div>
+  </LinkBox>
 </div>
