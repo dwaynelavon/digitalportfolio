@@ -1,0 +1,35 @@
+---
+interface Props {
+  background?:
+    | "light-gray"
+    | "dark-gray"
+    | "light-azure"
+    | "dark-azure"
+    | "light-lavender"
+    | "dark-lavender";
+  href: string;
+}
+
+const { background, href } = Astro.props;
+let backgroundClass = "";
+switch (background) {
+  case "light-azure":
+    backgroundClass =
+      "bg-azure-50 hover:bg-azure-100 dark:bg-azure-300 hover:dark:bg-azure-400 transition-colors duration-300";
+    break;
+  case "light-lavender":
+    backgroundClass =
+      "bg-lavender-50 hover:bg-lavender-100 dark:bg-lavender-200 hover:dark:bg-lavender-300 transition-colors duration-300";
+    break;
+  default:
+    backgroundClass =
+      "dark:bg-neutral-900 bg-white hover:dark:bg-neutral-800 hover:bg-neutral-50";
+}
+---
+
+<a
+  {href}
+  class={`size-full block rounded-lg p-8 shadow-md dark:shadow-none ${backgroundClass}`}
+>
+  <slot />
+</a>
