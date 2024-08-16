@@ -13,7 +13,7 @@ const { background } = Astro.props;
 let backgroundClass = "";
 switch (background) {
   case "light-gray":
-    backgroundClass = "bg-neutral-700";
+    backgroundClass = "dark:bg-neutral-700 bg-neutral-50";
     break;
 
   case "light-azure":
