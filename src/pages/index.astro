@@ -8,6 +8,7 @@ import Work from "@/components/Work.astro";
 import CurrentStack from "@/components/CurrentStack.astro";
 import AboutMe from "@/components/AboutMe.astro";
 import Designs from "@/components/Designs.astro";
+import Overtake from "@/components/Overtake.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -22,14 +23,12 @@ import Designs from "@/components/Designs.astro";
         <div class="col-span-10 flex flex-col gap-8">
           <Work />
 
-          <!-- About -->
           <div class="col-span-10">
             <AboutMe />
           </div>
         </div>
 
-        <!-- Overtake Figma designs -->
-        <div class="col-span-10 h-[220px]">
+        <div class="col-span-10 h-[234px]">
           <Designs />
         </div>
       </div>
@@ -39,7 +38,7 @@ import Designs from "@/components/Designs.astro";
         <!-- Avatar -->
         <div
           class="col-span-5 h-[190px] rounded-2xl bg-neutral-900 bg-cover bg-center shadow-md dark:shadow-none"
-          style="background-image: url('https://khtaejonhhmqumbcfahq.supabase.co/storage/v1/object/public/avatars/XT308664.jpg?t=2024-08-14T19%3A46%3A41.777Z')"
+          style="background-image: url('https://khtaejonhhmqumbcfahq.supabase.co/storage/v1/object/public/portfolio/XT308664.jpg?t=2024-08-16T00%3A18%3A09.503Z')"
         >
         </div>
 
@@ -51,17 +50,12 @@ import Designs from "@/components/Designs.astro";
           <CurrentStack />
         </div>
 
-        <!-- Dark Mode -->
         <div class="col-span-4 h-[224px]">
           <DarkModeToggle client:load />
         </div>
 
-        <!-- Overtake Social -->
-        <div
-          class="col-span-10 flex h-[280px] gap-6 rounded-2xl bg-neutral-900 p-8"
-        >
-          <h3 class="text-xl font-semibold text-white">Overtake Social</h3>
-          <div class="flex flex-col gap-2"></div>
+        <div class="col-span-10">
+          <Overtake />
         </div>
       </div>
     </div>
