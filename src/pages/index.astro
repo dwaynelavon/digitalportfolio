@@ -18,7 +18,7 @@ import Overtake from "@/components/Overtake.astro";
     <div class="bento grid grid-cols-8 gap-4 lg:grid-cols-12 lg:gap-8">
       <!-- Left grid -->
       <div
-        class="col-span-5 grid auto-rows-min grid-cols-10 gap-4 lg:col-span-5 lg:gap-8"
+        class="col-span-8 grid auto-rows-min grid-cols-10 gap-4 sm:col-span-5 lg:col-span-5 lg:gap-8"
       >
         <div class="col-span-10">
           <Intro />
@@ -36,7 +36,7 @@ import Overtake from "@/components/Overtake.astro";
 
       <!-- Right grid -->
       <div
-        class="col-span-3 grid auto-rows-min grid-cols-10 gap-4 lg:col-span-7 lg:gap-8"
+        class="col-span-8 grid auto-rows-min grid-cols-10 gap-4 sm:col-span-3 lg:col-span-7 lg:gap-8"
       >
         <!-- Avatar -->
         <div
@@ -65,14 +65,6 @@ import Overtake from "@/components/Overtake.astro";
     <div class="mt-4 w-full lg:hidden">
       <Overtake />
     </div>
-
-    <style>
-      /* .bento {
-        display: grid;
-        gap: 32px;
-        grid-template-columns: repeat(12, 1fr);
-      } */
-    </style>
   </main>
 </Layout>
 
