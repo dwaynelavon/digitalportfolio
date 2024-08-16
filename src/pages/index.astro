@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import "@/styles/global.css";
 import Contact from "@/components/Contact.astro";
 import Work from "@/components/Work.astro";
+import CurrentStack from "@/components/CurrentStack.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -16,9 +17,9 @@ import Work from "@/components/Work.astro";
           <Intro />
         </div>
 
-        <!-- Resume and portfolio code -->
         <div class="col-span-10 flex flex-col gap-8">
           <Work />
+
           <!-- About -->
           <div
             class="col-span-10 flex flex-col gap-6 rounded-2xl bg-neutral-900 p-8"
@@ -52,25 +53,12 @@ import Work from "@/components/Work.astro";
         >
         </div>
 
-        <!-- Contact -->
         <div class="col-span-5 flex flex-col gap-8">
           <Contact />
         </div>
 
-        <!-- Current stack -->
-        <div
-          class="col-span-6 flex h-[224px] flex-col gap-6 rounded-2xl bg-lavender-800 p-8"
-        >
-          <h3 class="text-xl font-semibold text-white">Current Stack</h3>
-          <p class="text-normal font-normal leading-5 text-white">
-            At the moment, i’m loving the DX of React, Convex, NextJS 13,
-            Tailwind, and ShadCN.
-          </p>
-          <div>
-            <span class="text-sm font-light leading-normal text-white">
-              **Currently learning Rust
-            </span>
-          </div>
+        <div class="col-span-6 flex h-[224px] flex-col">
+          <CurrentStack />
         </div>
 
         <!-- Dark Mode -->
