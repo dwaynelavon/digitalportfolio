@@ -19,8 +19,6 @@ export function DarkModeToggle() {
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
   }, [theme]);
 
-  console.log(isDark);
-
   return (
     <div className="flex size-full flex-col items-center justify-between gap-6 rounded-2xl bg-neutral-50 p-8 shadow-md dark:bg-neutral-700 dark:shadow-none">
       <h3 className="text-xl font-semibold text-black dark:text-white">

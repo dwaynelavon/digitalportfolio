@@ -26,7 +26,7 @@ switch (background) {
     backgroundClass = "bg-lavender-300";
     break;
   case "dark-lavender":
-    backgroundClass = "bg-lavender-200 dark:bg-lavender-800";
+    backgroundClass = "bg-lavender-100 dark:bg-lavender-800";
     break;
   default:
     backgroundClass = "dark:bg-neutral-900 bg-white";
@@ -34,7 +34,7 @@ switch (background) {
 ---
 
 <div
-  class={`size-full rounded-2xl p-8 shadow-md dark:shadow-none ${backgroundClass}`}
+  class={`size-full rounded-2xl p-8 shadow-md dark:shadow-none relative ${backgroundClass}`}
 >
   <slot />
 </div>
