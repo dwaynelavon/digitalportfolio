@@ -6,6 +6,7 @@ import "@/styles/global.css";
 import Contact from "@/components/Contact.astro";
 import Work from "@/components/Work.astro";
 import CurrentStack from "@/components/CurrentStack.astro";
+import AboutMe from "@/components/AboutMe.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -21,15 +22,8 @@ import CurrentStack from "@/components/CurrentStack.astro";
           <Work />
 
           <!-- About -->
-          <div
-            class="col-span-10 flex flex-col gap-6 rounded-2xl bg-neutral-900 p-8"
-          >
-            <h3 class="text-xl font-semibold text-white">About Me</h3>
-            <p class="text-normal font-normal leading-normal text-white">
-              My 10+ years at companies like Google and Servicenow have honed my
-              ability to create elegant solutions to the most intricate
-              problems. Explore my work below.
-            </p>
+          <div class="col-span-10">
+            <AboutMe />
           </div>
         </div>
 
