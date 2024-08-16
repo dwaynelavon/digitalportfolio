@@ -10,10 +10,31 @@ interface Props {
 }
 
 const { background } = Astro.props;
+let backgroundClass = "bg-neutral-900";
+switch (background) {
+  case "light-gray":
+    backgroundClass = "bg-neutral-900";
+    break;
+  case "dark-gray":
+    backgroundClass = "bg-neutral-900";
+    break;
+  case "light-azure":
+    backgroundClass = "bg-azure-300";
+    break;
+  case "dark-azure":
+    backgroundClass = "bg-azure-800";
+    break;
+  case "light-lavender":
+    backgroundClass = "bg-lavender-300";
+    break;
+  case "dark-lavender":
+    backgroundClass = "bg-lavender-800";
+    break;
+  default:
+    backgroundClass = "bg-neutral-900";
+}
 ---
 
-<div
-  class={`bg-${background || "zinc"}-500 text-white p-4 rounded-lg shadow-2xl `}
->
+<div class={`size-full rounded-lg p-8 ${backgroundClass}`}>
   <slot />
 </div>
