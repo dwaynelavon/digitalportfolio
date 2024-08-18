@@ -1,8 +1,14 @@
 ---
 import Box from "./Box.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
 ---
 
-<Box background="dark-gray">
+<Box background="dark-gray" class:list={[className]}>
   <div class="flex flex-col gap-6 text-neutral-900 dark:text-neutral-50">
     <h3 class="text-xl font-semibold">About Me</h3>
     <p class="text-normal font-normal leading-normal">

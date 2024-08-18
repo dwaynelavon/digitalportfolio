@@ -7,12 +7,17 @@ interface Props {
     | "dark-azure"
     | "light-lavender"
     | "dark-lavender";
+  class?: string;
   href: string;
 }
 
-const { background, href } = Astro.props;
+const { background, href, class: className } = Astro.props;
 let backgroundClass = "";
 switch (background) {
+  case "light-gray":
+    backgroundClass =
+      "dark:bg-neutral-700 bg-neutral-50 hover:dark:bg-neutral-800 hover:bg-neutral-50 transition-colors duration-300";
+    break;
   case "light-azure":
     backgroundClass =
       "bg-azure-50 hover:bg-azure-100 dark:bg-azure-300 hover:dark:bg-azure-400 transition-colors duration-300";
@@ -28,10 +33,14 @@ switch (background) {
 ---
 
 <a
+  class:list={[
+    `block size-full rounded-2xl p-8 shadow-md dark:shadow-none`,
+    backgroundClass,
+    className,
+  ]}
   {href}
-  class={`size-full block rounded-2xl p-8 shadow-md dark:shadow-none ${backgroundClass}`}
-  target="_blank"
   rel="noopener noreferrer"
+  target="_blank"
 >
   <slot />
 </a>

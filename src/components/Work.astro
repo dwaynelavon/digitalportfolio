@@ -1,10 +1,16 @@
 ---
-import Box from "./Box.astro";
 import LinkBox from "./LinkBox.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
 ---
 
-<div class="relative h-[60px] w-full">
+<div class:list={["flex gap-4 lg:gap-8", className]}>
   <LinkBox
+    class="relative h-[60px] w-full"
     href="https://drive.google.com/file/d/1Qb6i8H76c8ysfoDhEshY5d_4n2XgJs5W/view?usp=drive_link"
     background="light-lavender"
   >
@@ -14,10 +20,9 @@ import LinkBox from "./LinkBox.astro";
       <span class="font-normal font-semibold">Resume</span>
     </div>
   </LinkBox>
-</div>
 
-<div class="relative h-[60px] w-full">
   <LinkBox
+    class="relative h-[60px] w-full"
     href="https://github.com/dwaynelavon/digitalportfolio"
     background="light-azure"
   >

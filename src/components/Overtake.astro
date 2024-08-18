@@ -1,11 +1,35 @@
 ---
 import Box from "./Box.astro";
+import { getImage } from "astro:assets";
+import horizontalCars from "../assets/portfolio_overtake_cars_horizontal.png";
+import veritcalCars from "../assets/portfolio_overtake_cars_vertical.png";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const optimizedHorizontalBackground = await getImage({
+  src: horizontalCars,
+  format: "webp",
+});
+
+const optimizedVerticalBackground = await getImage({
+  src: veritcalCars,
+  format: "webp",
+});
 ---
 
-<Box background="dark-gray">
+<Box background="dark-gray" class:list={[className]}>
   <div
-    class="flex w-[calc(100%-2rem-205px)] max-w-[290px] flex-col gap-6 text-neutral-900 dark:text-neutral-50"
+    class="flex w-full max-w-[290px] flex-col gap-6 pt-[calc(150px+2rem)] text-neutral-900 sm:w-[calc(100%-2rem-205px)] sm:pt-0 dark:text-neutral-50"
   >
+    <div
+      class="absolute left-0 top-0 h-[200px] w-full bg-cover bg-center bg-no-repeat sm:block sm:hidden"
+      style={`background-image: url(${optimizedHorizontalBackground.src});`}
+    >
+    </div>
     <h3 class="text-xl font-semibold">Overtake Social</h3>
     <p class="text-normal font-normal leading-normal">
       Overtake is a passion project born out of my love for cars and coding.
@@ -13,7 +37,7 @@ import Box from "./Box.astro";
       motoring obsessions.
     </p>
     <a
-      class="flex h-10 items-center justify-center rounded-2xl bg-azure-50 text-sm font-semibold text-neutral-900 transition-colors duration-300 hover:bg-azure-100 dark:bg-azure-300"
+      class="flex h-10 items-center justify-center rounded-2xl bg-azure-50 text-sm font-semibold text-neutral-900 transition-colors duration-300 hover:bg-azure-100 dark:bg-azure-300 hover:dark:bg-azure-400"
       href="https://overtake.social"
       rel="noopener noreferrer"
       target="_blank"
@@ -24,7 +48,7 @@ import Box from "./Box.astro";
 
   <div
     class="absolute right-8 top-0 hidden h-full w-[205px] bg-cover bg-center bg-no-repeat sm:block"
-    style="background-image: url('https://khtaejonhhmqumbcfahq.supabase.co/storage/v1/object/public/portfolio/portfolio_overtake_cars_vertical.png?t=2024-08-16T00%3A18%3A59.867Z')"
+    style={`background-image: url(${optimizedVerticalBackground.src});`}
   >
   </div>
 </Box>
