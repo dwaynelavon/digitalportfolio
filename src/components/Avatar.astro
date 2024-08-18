@@ -1,0 +1,25 @@
+---
+import { getImage } from "astro:assets";
+import portfolioAvatar from "../assets/portfolio_avatar.jpg";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const optimizedBackground = await getImage({
+  src: portfolioAvatar,
+  format: "webp",
+});
+---
+
+<div
+  aria-hidden
+  class:list={[
+    "rounded-2xl bg-neutral-900 bg-cover bg-center shadow-md dark:shadow-none",
+    className,
+  ]}
+  style={`background-image: url(${optimizedBackground.src});`}
+>
+</div>
