@@ -1,10 +1,19 @@
 ---
-import Box from "./Box.astro";
 import LinkBox from "./LinkBox.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
 ---
 
-<div class="relative h-[79px] w-full">
-  <LinkBox href="mailto:dwaynelove.tech@gmail.com" background="light-lavender">
+<div class:list={["flex flex-col", className]}>
+  <LinkBox
+    background="light-lavender"
+    class="relative h-[79px] w-full"
+    href="mailto:dwaynelove.tech@gmail.com"
+  >
     <div
       class="flex size-full cursor-pointer items-center justify-between gap-4 text-neutral-900"
     >
@@ -24,7 +33,7 @@ import LinkBox from "./LinkBox.astro";
           ><rect width="20" height="16" x="2" y="4" rx="2"></rect><path
             d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
         >
-        <span class="font-normal font-semibold">Email</span>
+        <span class="font-normal font-semibold">Email me</span>
       </div>
       <!-- arrow right icon -->
       <svg
@@ -42,12 +51,11 @@ import LinkBox from "./LinkBox.astro";
       >
     </div>
   </LinkBox>
-</div>
 
-<div class="relative h-[79px] w-full">
   <LinkBox
-    href="https://www.linkedin.com/in/dwayne-love-8b279091/"
+    class="relative h-[79px] w-full"
     background="light-azure"
+    href="https://www.linkedin.com/in/dwayne-love-8b279091/"
   >
     <div
       class="flex size-full cursor-pointer items-center justify-between gap-4 text-neutral-900"
@@ -72,7 +80,7 @@ import LinkBox from "./LinkBox.astro";
             cy="4"
             r="2"></circle></svg
         >
-        <span class="font-normal font-semibold">Follow</span>
+        <span class="font-normal font-semibold">Follow me</span>
       </div>
       <!-- arrow right icon -->
       <svg

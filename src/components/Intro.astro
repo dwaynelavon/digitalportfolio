@@ -1,8 +1,14 @@
 ---
 import Box from "./Box.astro";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
 ---
 
-<Box background="dark-gray">
+<Box background="dark-gray" class={className}>
   <h2 class="text-4xl font-semibold">
     <span
       class="bg-gradient-to-r from-azure-700 via-lavender-300 to-lavender-700 bg-clip-text text-transparent dark:from-azure-300 dark:via-lavender-50 dark:to-lavender-300"

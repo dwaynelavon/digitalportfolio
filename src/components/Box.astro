@@ -7,15 +7,17 @@ interface Props {
     | "dark-azure"
     | "light-lavender"
     | "dark-lavender";
+
+  class?: string;
 }
 
-const { background } = Astro.props;
+const { background, class: className } = Astro.props;
+
 let backgroundClass = "";
 switch (background) {
   case "light-gray":
     backgroundClass = "dark:bg-neutral-700 bg-neutral-50";
     break;
-
   case "light-azure":
     backgroundClass = "bg-azure-300";
     break;
@@ -34,7 +36,11 @@ switch (background) {
 ---
 
 <div
-  class={`size-full rounded-2xl p-8 shadow-md dark:shadow-none relative ${backgroundClass}`}
+  class:list={[
+    "relative size-full rounded-2xl p-8 shadow-md dark:shadow-none",
+    backgroundClass,
+    className,
+  ]}
 >
   <slot />
 </div>

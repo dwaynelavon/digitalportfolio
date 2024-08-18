@@ -2,9 +2,10 @@ import { Switch } from "@/ui/ui/switch";
 import { SunDimIcon, MoonIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export function DarkModeToggle() {
+export function DarkModeToggle({ className }: { className?: string }) {
   const [theme, setThemeState] = useState<"light" | "dark" | "system">("dark");
   const [isDark, setIsDark] = useState(false);
+
   useEffect(() => {
     const isDarkMode = document.documentElement.classList.contains("dark");
     setThemeState(isDarkMode ? "dark" : "light");
@@ -20,7 +21,9 @@ export function DarkModeToggle() {
   }, [theme]);
 
   return (
-    <div className="flex size-full flex-col items-center justify-between gap-6 rounded-2xl bg-neutral-50 p-8 shadow-md dark:bg-neutral-700 dark:shadow-none">
+    <div
+      className={`flex size-full flex-col items-center justify-between gap-6 rounded-2xl bg-neutral-50 p-8 shadow-md dark:bg-neutral-700 dark:shadow-none${className ? ` ${className}` : ""}`}
+    >
       <h3 className="text-xl font-semibold text-black dark:text-white">
         Dark mode
       </h3>
